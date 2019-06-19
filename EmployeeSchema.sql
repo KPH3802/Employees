@@ -1,3 +1,4 @@
+--employees table
 CREATE TABLE employees(
 	emp_no  SERIAL PRIMARY KEY, 
 	birth_date DATE,
@@ -7,20 +8,17 @@ CREATE TABLE employees(
 	hire_date DATE
 );
 
-SELECT *
-FROM employees;
 
--- "dept_no","dept_name"
+-- departments table
 CREATE TABLE departments (
 	dept_no VARCHAR PRIMARY KEY,
 	dept_name VARCHAR(30) NOT NULL
 );
 
-SELECT *
-FROM departments;
 
 
--- emp_no,salary,from_date,to_date
+
+--salaries table
 
 CREATE TABLE salaries(
 	emp_no  INTEGER NOT NULL,
@@ -30,10 +28,8 @@ CREATE TABLE salaries(
 	to_date DATE
 );
 
-SELECT *
-FROM salaries;
 
--- "emp_no","title","from_date","to_date"
+-- titles table
 CREATE TABLE titles(
 	emp_no INTEGER NOT NULL,
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
@@ -42,8 +38,6 @@ CREATE TABLE titles(
 	to_date DATE
 );
 	
-SELECT *
-FROM titles;
 
 
 -- Junction Table
@@ -57,8 +51,6 @@ CREATE TABLE dept_manager(
 	to_date DATE
 );
 
-SELECT *
-FROM dept_manager;
 
 --Junction Table
 CREATE TABLE dept_emp(
@@ -70,6 +62,3 @@ CREATE TABLE dept_emp(
 	from_date DATE,
 	to_date DATE
 );
-
-SELECT *
-FROM dept_emp;
